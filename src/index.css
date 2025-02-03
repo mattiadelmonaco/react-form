@@ -1,0 +1,26 @@
+/* RESET */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* GENERAL */
+
+body {
+  font-family: "Open Sans", serif;
+}
+
+/* HEADER */
+
+header {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+header h1 {
+  text-align: center;
+  background-color: darkorange;
+  color: #fff;
+  padding: 0.625rem 0;
+}
