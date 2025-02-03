@@ -1,10 +1,23 @@
 import articlesData from "../data/articlesData";
-import Article from "./Article";
+import ArticleItem from "./ArticleItem";
 
 export default function Main() {
   return (
     <main>
-      <section className="container"></section>
+      <section className="container">
+        <ul className="article-list">
+          {articlesData.map((article) => {
+            return (
+              <ArticleItem
+                key={article.id}
+                title={article.title}
+                url={article.url}
+              />
+            );
+          })}
+        </ul>
+      </section>
+      <hr />
     </main>
   );
 }

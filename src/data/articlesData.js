@@ -1,14 +1,17 @@
 export default [
   {
     id: 1,
-    titolo: "Gestire il tempo",
+    title: "Gestire il tempo",
+    url: "#",
   },
   {
     id: 2,
-    titolo: "Strumenti per il remoto",
+    title: "Strumenti per il remoto",
+    url: "#",
   },
   {
     id: 3,
-    titolo: "Meditazione base",
+    title: "Meditazione base",
+    url: "#",
   },
 ];

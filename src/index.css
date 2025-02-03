@@ -20,7 +20,6 @@ body {
 /* HEADER */
 
 header {
-  margin-bottom: 2.5rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
@@ -29,4 +28,55 @@ header h1 {
   background-color: darkorange;
   color: #fff;
   padding: 0.625rem 0;
+}
+
+/* MAIN */
+
+main hr {
+  color: lightgrey;
+  border: 1px solid;
+}
+
+/* ARTICLES SECTION */
+
+.article-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1.875rem 0;
+}
+
+.article {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0.625rem 0;
+}
+
+.article__title {
+  font-size: 1.75rem;
+  color: black;
+  padding-right: 1.25rem;
+  margin-right: 1.25rem;
+  border-right: 0.125rem solid lightgrey;
+  text-decoration: none;
+}
+
+.article__btn--delete {
+  width: 30px;
+  height: 30px;
+  color: rgb(183, 0, 0);
+  cursor: pointer;
+  border: none;
+  border-radius: 0.5rem;
+  transition: 0.4s;
+}
+
+.article__btn--delete:hover {
+  transform: scale(1.25);
+  transition: 0.4s;
+}
+
+.article__btn--delete:active {
+  background-color: lightgrey;
 }
