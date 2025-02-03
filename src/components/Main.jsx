@@ -26,6 +26,10 @@ export default function Main() {
     setArticleData(updatedArticles);
   };
 
+  const removeList = () => {
+    setArticleData([]);
+  };
+
   return (
     <main>
       <section>
@@ -47,6 +51,9 @@ export default function Main() {
               );
             })}
           </ul>
+          <button className="article__btn--deleteList" onClick={removeList}>
+            Cancella lista
+          </button>
         </div>
       </section>
       <hr />
