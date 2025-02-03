@@ -51,9 +51,11 @@ export default function Main() {
               );
             })}
           </ul>
-          <button className="article__btn--deleteList" onClick={removeList}>
-            Cancella lista
-          </button>
+          {articlesData.length > 0 && (
+            <button className="article__btn--deleteList" onClick={removeList}>
+              Cancella lista
+            </button>
+          )}
         </div>
       </section>
       <hr />
