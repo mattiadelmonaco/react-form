@@ -1,6 +1,5 @@
 import { useState } from "react";
 import articles from "../data/articlesData";
-import ArticleItem from "./ArticleItem";
 
 export default function Main() {
   const [articleTitle, setArticleTitle] = useState("");
@@ -17,6 +16,14 @@ export default function Main() {
         url: "#",
       },
     ]);
+    setArticleTitle("");
+  };
+
+  const removeArticle = (id) => {
+    const updatedArticles = articlesData.filter((article) => {
+      return article.id !== id;
+    });
+    setArticleData(updatedArticles);
   };
 
   return (
@@ -26,11 +33,17 @@ export default function Main() {
           <ul className="articles-list">
             {articlesData.map((article) => {
               return (
-                <ArticleItem
-                  key={article.id}
-                  title={article.title}
-                  url={article.url}
-                />
+                <li key={article.id} className="article">
+                  <a href={article.url} className="article__title">
+                    <h3>{article.title}</h3>
+                  </a>
+                  <button
+                    onClick={() => removeArticle(article.id)}
+                    className="article__btn--delete"
+                  >
+                    <i className="fa-solid fa-trash"></i>
+                  </button>
+                </li>
               );
             })}
           </ul>
@@ -48,6 +61,7 @@ export default function Main() {
               onChange={(e) => {
                 setArticleTitle(e.target.value);
               }}
+              required
             />
             <button className="form__submitBtn" type="submit">
               Aggiungi articolo
