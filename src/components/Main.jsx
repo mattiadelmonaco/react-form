@@ -1,8 +1,24 @@
-import articlesData from "../data/articlesData";
+import { useState } from "react";
+import articles from "../data/articlesData";
 import ArticleItem from "./ArticleItem";
-import FormAddArticles from "./FormAddArticle";
 
 export default function Main() {
+  const [articleTitle, setArticleTitle] = useState("");
+
+  const [articlesData, setArticleData] = useState(articles);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setArticleData([
+      ...articlesData,
+      {
+        id: articlesData.length + 1,
+        title: articleTitle,
+        url: "#",
+      },
+    ]);
+  };
+
   return (
     <main>
       <section>
@@ -23,7 +39,20 @@ export default function Main() {
       <hr />
       <section>
         <div className="container">
-          <FormAddArticles />
+          <form onSubmit={handleSubmit} className="form__addArticle">
+            <input
+              className="form__inputArea"
+              type="text"
+              placeholder="Inserisci titolo nuovo articolo"
+              value={articleTitle}
+              onChange={(e) => {
+                setArticleTitle(e.target.value);
+              }}
+            />
+            <button className="form__submitBtn" type="submit">
+              Aggiungi articolo
+            </button>
+          </form>
         </div>
       </section>
     </main>
