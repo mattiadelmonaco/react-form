@@ -21,9 +21,11 @@ export default function Main() {
         </div>
       </section>
       <hr />
-      <div className="container">
-        <FormAddArticles />
-      </div>
+      <section>
+        <div className="container">
+          <FormAddArticles />
+        </div>
+      </section>
     </main>
   );
 }
