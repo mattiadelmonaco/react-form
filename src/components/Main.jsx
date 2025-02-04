@@ -11,7 +11,7 @@ export default function Main() {
     setArticleData([
       ...articlesData,
       {
-        id: articlesData.length + 1,
+        id: articlesData[articlesData.length - 1].id + 1,
         title: articleTitle,
         url: "#",
       },
